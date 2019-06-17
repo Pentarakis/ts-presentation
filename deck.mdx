@@ -2,7 +2,6 @@ import future from '@mdx-deck/themes/future'
 import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
 import {Split} from '@mdx-deck/layouts'
 import {Title, Slide, Section, theme} from './adesso'
-import { Notes } from 'mdx-deck'
 
 export const themes = [
    theme,
@@ -26,38 +25,6 @@ export const themes = [
 ## JavaScript & TypeScript
 
 </Title>
-
----
-
-<Section bg={4}>
-
-# JavaScript
-
-</Section>
-
----
-
-<Slide>
-
-# History
-
-Folien 8-10
-
-</Slide>
-
----
-
-<Slide>
-
-# JavaScript Basics
-
-* Variables declaration
-* primitive values and reference values
-* Arrays
-* Objects
-* Functions
-
-</Slide>
 
 ---
 
@@ -119,32 +86,6 @@ Folien 8-10
 
 ---
 
-# Concepts
-
-<Split>
-
-* Async code (Folien 259 - 269)
-    * callbacks
-    * Promises
-    * async/await
-    * generators?
-* this context
-* higher order functions
-
-
-* execution model
-    * single threaded
-    * event loop
-* type coercion
-* scoping
-    * closures
-    * IIFE
-    * hoisting
-
-</Split>
-
----
-
 <Title>
 
 # TypeScript
@@ -184,18 +125,6 @@ Folien 8-10
 
 <Slide>
 
-# What is TypeScript not?
-
-* TypeScript has no runtime
-    * No runtime type checking
-    * missing functionality has to be polyfilled
-
-</Slide>
-
----
-
-<Slide>
-
 # Why TypeScript?
 
 * Statement completion and code refactoring
@@ -206,6 +135,17 @@ Folien 8-10
 
 The result: better maintenance for long-living projects
 
+</Slide>
+
+---
+
+<Slide>
+
+# What is TypeScript not?
+
+* TypeScript has no runtime
+    * No runtime type checking
+    * missing functionality has to be polyfilled
 
 </Slide>
 
@@ -592,19 +532,23 @@ being open to extension, you should always use an interface over a type alias if
 
 <Slide>
 
-# Classes in TypeScript
-
-* Class attributes and methods can be public or private.
-* Attributes can be readonly and may have initialized values.
-
 ```ts
 class Person {
-  bornOn: Date; // public by default
-  public readonly name: string;
-  private weight: number = 0;
+    readonly name: string;
+    firstName: string; // public by default
+    protected age: number;
+    private salary: number = 0;
 
-  constructor(name: string) {
-      this.name = name;
+    constructor(name: string, age: number, salary: number) {
+        this.name = name; this.age = age; this.salary = salary;
+    }
+
+    sayHi() {
+        this.toConsole("Hi, I'm"):
+    }
+
+    private toConsole(message: string) {
+        console.log(message, name);
   }
 }
 ```
