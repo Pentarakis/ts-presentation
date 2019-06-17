@@ -19,6 +19,48 @@ export const themes = [
 
 ---
 
+<Title bg={3}>
+
+# Workshop
+
+## JavaScript & TypeScript
+
+</Title>
+
+---
+
+<Section bg={4}>
+
+# JavaScript
+
+</Section>
+
+---
+
+<Slide>
+
+# History
+
+Folien 8-10
+
+</Slide>
+
+---
+
+<Slide>
+
+# JavaScript Basics
+
+* Variables declaration
+* primitive values and reference values
+* Arrays
+* Objects
+* Functions
+
+</Slide>
+
+---
+
 <Slide>
 
 # ES2015
@@ -77,11 +119,37 @@ export const themes = [
 
 ---
 
-<Section bg={4}>
+# Concepts
+
+<Split>
+
+* Async code (Folien 259 - 269)
+    * callbacks
+    * Promises
+    * async/await
+    * generators?
+* this context
+* higher order functions
+
+
+* execution model
+    * single threaded
+    * event loop
+* type coercion
+* scoping
+    * closures
+    * IIFE
+    * hoisting
+
+</Split>
+
+---
+
+<Title>
 
 # TypeScript
 
-</Section>
+</Title>
 
 ---
 
@@ -116,6 +184,18 @@ export const themes = [
 
 <Slide>
 
+# What is TypeScript not?
+
+* TypeScript has no runtime
+    * No runtime type checking
+    * missing functionality has to be polyfilled
+
+</Slide>
+
+---
+
+<Slide>
+
 # Why TypeScript?
 
 * Statement completion and code refactoring
@@ -126,17 +206,6 @@ export const themes = [
 
 The result: better maintenance for long-living projects
 
-</Slide>
-
----
-
-<Slide>
-
-# What is TypeScript not?
-
-* TypeScript has no runtime
-    * No runtime type checking
-    * missing functionality has to be polyfilled
 
 </Slide>
 
@@ -362,14 +431,11 @@ function forever(): never {
 
 ---
 
-<Slide>
+<Section bg={4}>
 
-# Interfaces
+# Interfaces & type alias
 
-* Type-checking of the shape of values
-* Interfaces give a type to these shapes
-
-</Slide>
+</Section>
 
 ---
 
@@ -388,7 +454,7 @@ function forever(): never {
 
 # Interfaces - Without an interface
 
-You can generate interfaces on the fly.
+You can declare types inline
 
 ```ts
 const book: { isbn: string, title: string };
@@ -397,7 +463,6 @@ book = {
     isbn: '978-1593272821',
     title: 'Eloquent JavaScript'
 };
-
 ```
 
 </Slide>
@@ -406,7 +471,7 @@ book = {
 
 <Slide>
 
-# Interfaces - Without an interface
+# Interfaces - With an interface
 
 Give an interface a name and use it as a type for variables.
 
@@ -415,13 +480,10 @@ interface Book {
     isbn: string;
     title: string;
 }
-const book: Book;
-
-book = {
+const book: Book = {
     isbn: '978-1593272821',
     title: 'Eloquent JavaScript'
 };
-
 ```
 
 </Slide>
@@ -530,24 +592,20 @@ being open to extension, you should always use an interface over a type alias if
 
 <Slide>
 
+# Classes in TypeScript
+
+* Class attributes and methods can be public or private.
+* Attributes can be readonly and may have initialized values.
+
 ```ts
 class Person {
-    readonly name: string;
-    firstName: string; // public by default
-    protected age: number;
-    private salary: number = 0;
+  bornOn: Date; // public by default
+  public readonly name: string;
+  private weight: number = 0;
 
-    constructor(name: string, age: number, salary: number) {
-        this.name = name; this.age = age; this.salary = salary;
-    }
-
-    sayHi() {
-        this.toConsole("Hi, I'm"):
-    }
-
-    private toConsole(message: string) {
-        console.log(message, name);
-    }
+  constructor(name: string) {
+      this.name = name;
+  }
 }
 ```
 
