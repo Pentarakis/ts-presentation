@@ -1,0 +1,56 @@
+.title-wrapper header {
+    color: #0071B9;
+}
+
+
+.slide-wrapper {
+    width: 100vw;
+    height: 100vh;
+    padding: 60px;
+    padding-top: 45px;
+}
+
+.slide-wrapper header {
+    color: #0071B9;
+}
+
+.slide-wrapper header .first-line {
+    display: flex;
+    font-size: 26px;
+    border-bottom: 2px solid #0071B9;
+    padding-bottom: 0.5em;
+    margin-right: 150px;
+}
+.slide-wrapper header .first-line .company-name, .slide-wrapper header .first-line .current-date{
+    border-left: 2px solid #0071B9;
+    margin-left: 10px;
+    padding-left: 10px;
+}
+
+.slide-wrapper header h1 {
+    font-size: 48px;
+    margin-top: 0; 
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.slide-wrapper header .logo {
+    float: right;
+    margin-top: -35px;
+}
+
+.slide-wrapper main p {
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+.slide-wrapper main ul {
+    list-style: none;
+    padding: 0;
+}
+
+.slide-wrapper main ul li::before {
+    content: "•";
+    color: #0071B9;
+    padding-right: 0.5em; 
+}
