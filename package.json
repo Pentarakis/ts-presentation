@@ -13,7 +13,9 @@
   "license": "ISC",
   "dependencies": {
     "@mdx-deck/export": "^2.3.2",
-    "mdx-deck": "^2.3.2",
     "mdx-deck-code-surfer": "^0.5.5"
+  },
+  "devDependencies": {
+    "mdx-deck": "^2.4.0"
   }
 }
