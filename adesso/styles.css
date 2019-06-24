@@ -8,6 +8,7 @@
     height: 100vh;
     padding: 60px;
     padding-top: 45px;
+    font-size: 32px
 }
 
 .slide-wrapper header {
@@ -46,7 +47,7 @@
 
 .slide-wrapper main ul {
     list-style: none;
-    padding: 0;
+   /* padding: 0; */
 }
 
 .slide-wrapper main ul li::before {
@@ -54,3 +55,18 @@
     color: #0071B9;
     padding-right: 0.5em; 
 }
+
+.slide-wrapper blockquote{
+    font-size: 2rem;
+    font-style: italic;
+}
+
+.slide-wrapper img[alt~="TypeScript"]{
+    margin-left: 4em
+}
+
+@media print{
+.slide-wrapper pre{
+    font-size: 25px
+}
+} 
