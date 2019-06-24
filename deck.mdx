@@ -1,15 +1,14 @@
 import future from '@mdx-deck/themes/future'
 import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
 import {Split} from '@mdx-deck/layouts'
-import {Title, Slide, theme} from './adesso'
+import {Title, Slide, Section, theme} from './adesso'
 
 export const themes = [
    theme,
    highlight
 ]
 
-
-<Title>
+<Title bg={1}>
 
 # Workshop
 
@@ -19,11 +18,15 @@ export const themes = [
 
 ---
 
-<Title>
+<Title bg={3}>
+
+# Workshop
 
 # adesso
 
 </Title>
+
+
 
 ---
 
@@ -67,7 +70,6 @@ des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Bran
 <Slide>
 
 # Wo wir sind
-<br/>
 
 ![Die Grafik zeigt eine politische Karte von Europe. Die Karte ist auf das Gebiet um Deutschland, Österreich und die Schweiz zentriert.
  Die Standorte von adesso in diesen Ländern sind markiert. Die Standorte in Deutschland sind: Stralsund, Hamburg, Hannover, Berlin, Dortmund, Essen, Köln,
@@ -81,11 +83,25 @@ des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Bran
 
 <Slide>
 
+# Wo wir sind
+<br/>
+
+![Die Grafik zeigt eine politische Karte von Europe.  Die Standorte von adesso in europäsichen Ländern Ländern sind markiert. 
+ Die Standorte in Spanien sind: Madird, Barcelona, Jerez de la Fontera.
+ Der Standorte in der Türkei ist Istanbul. Der Standorte in Bulgarien ist: Sofia ]
+(./adesso/images/adessoMapEU.png)
+
+</Slide>
+
+---
+
+<Slide>
+
 # Wofür wir brennen - JavaScript Competence Center @adesso
 <br/>
 
 ![Die Grafik zeigt die Logos von JavaScript, Angular, React, TypeScript, Vue und nodeJS.]
-(./adesso/images/JSCC.png)
+(./adesso/images/CCLogo.png)
 
 
 </Slide>
@@ -95,6 +111,7 @@ des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Bran
 <Title>
 
 # JavaScript
+## JavaScript & TypeScript
 
 </Title>
 
@@ -392,11 +409,11 @@ enum Direction {
 
 ---
 
-<Title>
+<Section bg={4}>
 
 # Functions
 
-</Title>
+</Section>
 
 ---
 
@@ -539,6 +556,13 @@ function forever(): never {
 
 ---
 
+<Section bg={4}>
+
+# Interfaces & type alias
+
+</Section>
+
+---
 
 <Slide>
 
@@ -555,7 +579,7 @@ function forever(): never {
 
 # Interfaces - Without an interface
 
-You can generate interfaces on the fly.
+You can declare types inline
 
 ```ts
 const book: { isbn: string, title: string };
@@ -564,7 +588,6 @@ book = {
     isbn: '978-1593272821',
     title: 'Eloquent JavaScript'
 };
-
 ```
 
 </Slide>
@@ -573,7 +596,7 @@ book = {
 
 <Slide>
 
-# Interfaces - Without an interface
+# Interfaces - With an interface
 
 Give an interface a name and use it as a type for variables.
 
@@ -582,13 +605,10 @@ interface Book {
     isbn: string;
     title: string;
 }
-const book: Book;
-
-book = {
+const book: Book = {
     isbn: '978-1593272821',
     title: 'Eloquent JavaScript'
 };
-
 ```
 
 </Slide>
@@ -602,9 +622,9 @@ book = {
 Properties can be optional.
 
 ```ts
-interface Book {  
-    isbn: string;  
-    title: string;  
+interface Book {
+    isbn: string;
+    title: string;
     pages?: number;
 }
 
@@ -621,11 +641,11 @@ interface Book {
 Forgetting to implement ngOnInit throws a compile error.
 
 ```ts
-interface OnInit {  
+interface OnInit {
 	ngOnInit();
 }
 
-class BookListComponent implements OnInit { 
+class BookListComponent implements OnInit {
 	ngOnInit() {
     }
 }
@@ -687,11 +707,11 @@ being open to extension, you should always use an interface over a type alias if
 
 ---
 
-<Title>
+<Section bg={4}>
 
 # Classes
 
-</Title>
+</Section>
 
 ---
 
@@ -714,7 +734,7 @@ class Person {
 
     private toConsole(message: string) {
         console.log(message, name);
-    }
+  }
 }
 ```
 
@@ -767,11 +787,11 @@ let point3d: Point3d = {x: 1, y: 2, z: 3};
 
 # Generics
 
-Generics can be used in 
+Generics can be used in
 * interfaces
 * type aliases
-* classes 
-* methods 
+* classes
+* methods
 * functions.
 
 </Slide>
@@ -809,7 +829,7 @@ function identity<T>(arg: T): T {
 }
 
 // infered type of output: string
-let output = identity("myString"); 
+let output = identity("myString");
 let output = identity<string>("myString");
 ```
 
@@ -833,11 +853,11 @@ personLogger('John Doe') // Error
 
 ---
 
-<Title>
+<Section bg={4}>
 
 # Advanced Types
 
-</Title>
+</Section>
 
 ---
 
@@ -1147,11 +1167,9 @@ function isFish(pet: Fish | Bird): pet is Fish {
 
 must be enabled in tsconfig.json
 ```json
-{
-    "compilerOptions": {
-        "target": "ES5",
-        "experimentalDecorators": true
-    }
+"compilerOptions": {
+    "target": "ES5",
+    "experimentalDecorators": true
 }
 ```
 

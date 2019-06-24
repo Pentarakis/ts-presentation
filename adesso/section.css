@@ -1,0 +1,37 @@
+.section-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 97px;
+}
+
+.section-wrapper .highlight-side {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+}
+
+.section-wrapper header {
+    color: #0071B9;
+    margin-left: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.section-wrapper header .logo {
+    position: absolute;
+    top: 68px;
+    right: 45px;
+}
+
+.section-wrapper header h1, .section-wrapper header h2 {
+    font-weight: normal;
+}
+
+.section-wrapper header h1 {
+    font-size: 50px;
+    margin-block-start: 100px;
+}
