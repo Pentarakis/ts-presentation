@@ -1,7 +1,7 @@
 import future from '@mdx-deck/themes/future'
 import highlight from '@mdx-deck/themes/syntax-highlighter-prism'
 import {Split} from '@mdx-deck/layouts'
-import {Title, Slide, Section, theme} from './adesso'
+import {Title, Slide, Section, Image, theme} from './adesso'
 
 export const themes = [
    theme,
@@ -22,11 +22,9 @@ export const themes = [
 
 # Workshop
 
-# adesso
+## adesso
 
 </Title>
-
-
 
 ---
 
@@ -34,16 +32,10 @@ export const themes = [
 
 # Was wir machen
 
-> "adesso optimiert die Kerngeschäftsprozesse von Unternehmen 
+> "adesso optimiert die Kerngeschäftsprozesse von Unternehmen
 > durch Beratung und Entwicklung von Individualsoftware und Branchenlösungen."
 
-![Die Grafik ziegt vier rautenförmige Element, die von links nach rechts eine Prozesskette Abbilden.
- Das erste Element ganz links enthält den Text 'Business Consulting', darunter steht der Text: Strategie und Prozess. 
- Das zweite Element enthält den Text 'IT-Consulting', darunter steht der Text: Prozess und Architektur.
- Das dritte Element enthält den Text 'Software Development', darunter steht der Text: Architektur und Anwendung.
- Das vierte Element enthält den Text 'IT-Management', darunter steht der Text: Anwendung und Betrieb.
- Über der Prozesskette steht der Text 'business'. Unter Prozesskette steht der Text 'technology']
-(./adesso/images/adesso2.png)
+<Image src="./adesso/images/adesso2.png" width="90%"/>
 
 </Slide>
 
@@ -54,42 +46,23 @@ export const themes = [
 # Was uns auszeichnet - a great place to work!
 <br/>
 
-![Die Grafik zeigt den Umsatz der adesso Gruppe in Höhe von 375,50 Millionen € für das Jahr 2018, 
-Die Anzahl der Mitarbeiter werden mit dem Stand vom 29.03.2019 mit über 3400 Mitarbeitende angegeben.
-Darunter befinden sich Logos von Preisen, welche addesso in den vergagenen Jahren gewonnen hat.
-Insgesamt sind es 6 Auszeichungen. Diese sind: 1. Platz für den besten Arbeitgeber in der ITK Branche für Unternhemen 
-mit mehr als 1000 Mitarbeitende 2018, die Auszeichungen für den besten Arbeitgeber in Deutschland 2018 einen Award für den Top-Arbeitgeber
-des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Branche für Unternhemen 
-2016, die Auszeichungen für den besten Arbeitgeber in Deutschland 2016, und die Auszeichung 'Top Company' von kununu.]
-(./adesso/images/adesso1.png)
+<Image src="./adesso/images/adesso1.png" />
 
 </Slide>
 
 ---
 
-<Slide>
+<Slide bgSrc="./adesso/images/adessoMapDE.png">
 
 # Wo wir sind
-
-![Die Grafik zeigt eine politische Karte von Europe. Die Karte ist auf das Gebiet um Deutschland, Österreich und die Schweiz zentriert.
- Die Standorte von adesso in diesen Ländern sind markiert. Die Standorte in Deutschland sind: Stralsund, Hamburg, Hannover, Berlin, Dortmund, Essen, Köln,
- Düsseldorf, Aachen, Jena, Frankfurt, Nürnberg, Karlsruhe, Stuttgart, Reutlingen und München.
- Der Standorte in Österreich ist Wien. Die Standorte in der Schweiz sind: Basel, Zürich, Bern, Lausanne ]
-(./adesso/images/adessoMapDE.png)
 
 </Slide>
 
 ---
 
-<Slide>
+<Slide bgSrc="./adesso/images/adessoMapEU.png">
 
 # Wo wir sind
-<br/>
-
-![Die Grafik zeigt eine politische Karte von Europe.  Die Standorte von adesso in europäsichen Ländern Ländern sind markiert. 
- Die Standorte in Spanien sind: Madird, Barcelona, Jerez de la Fontera.
- Der Standorte in der Türkei ist Istanbul. Der Standorte in Bulgarien ist: Sofia ]
-(./adesso/images/adessoMapEU.png)
 
 </Slide>
 
@@ -98,22 +71,20 @@ des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Bran
 <Slide>
 
 # Wofür wir brennen - JavaScript Competence Center @adesso
-<br/>
 
-![Die Grafik zeigt die Logos von JavaScript, Angular, React, TypeScript, Vue und nodeJS.]
-(./adesso/images/CCLogo.png)
+<Image src="./adesso/images/CCLogo.png"/>
 
 
 </Slide>
 
 ---
 
-<Title>
+<Section bg={4} logo="white">
 
 # JavaScript
 ## JavaScript & TypeScript
 
-</Title>
+</Section>
 
 ---
 <Slide>
@@ -128,12 +99,12 @@ des Magazines Focus, Die Auszeichung für den besten Arbeitgeber in der ITK Bran
 
 _JavaScript timeline_
 
-![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird. 
-Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht. 
+![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird.
+Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht.
 ES1 im Jahr 1997,
 ES2 im Jahr 1998,
-ES3 im Jahr 1999, 
-ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen, 
+ES3 im Jahr 1999,
+ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen,
 ES5 im Jahr 2009,
 ES 5 Punkt 1 im Jahr 2011,
 ES 6, auch ECMAScript 2015 genannt, im Jahr 2015,
@@ -171,12 +142,12 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 
 </Split>
 
-![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird. 
-Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht. 
+![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird.
+Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht.
 ES1 im Jahr 1997,
 ES2 im Jahr 1998,
-ES3 im Jahr 1999, 
-ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen, 
+ES3 im Jahr 1999,
+ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen,
 ES5 im Jahr 2009,
 ES 5 Punkt 1 im Jahr 2011,
 ES 6, auch ECMAScript 2015 genannt, im Jahr 2015,
@@ -200,12 +171,12 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 ### ES2017
 * async / await
 
-![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird. 
-Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht. 
+![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird.
+Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht.
 ES1 im Jahr 1997,
 ES2 im Jahr 1998,
-ES3 im Jahr 1999, 
-ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen, 
+ES3 im Jahr 1999,
+ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen,
 ES5 im Jahr 2009,
 ES 5 Punkt 1 im Jahr 2011,
 ES 6, auch ECMAScript 2015 genannt, im Jahr 2015,
@@ -228,12 +199,13 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 ### ES2019
 * string trimming
 * Array.prototype.[flat, flatMap]
-![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird. 
-Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht. 
+
+![Die Grafik stellt ein Zeitstrahl dar und gibt Auskunft darüber welche Versionen von ECMAScript in welchem Jahr veröffentlicht wird.
+Der Zeitstrahl beginnt links im Jahr 1997 und geht bis zum Jahr 2018. Die verschiedenen ECMAScript Versionen wurden wie folgt veröffentlicht.
 ES1 im Jahr 1997,
 ES2 im Jahr 1998,
-ES3 im Jahr 1999, 
-ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen, 
+ES3 im Jahr 1999,
+ES4 wurde nie veröffentlicht und die Entwicklung abgebrochen,
 ES5 im Jahr 2009,
 ES 5 Punkt 1 im Jahr 2011,
 ES 6, auch ECMAScript 2015 genannt, im Jahr 2015,
@@ -248,11 +220,11 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 
 ---
 
-<Title>
+<Section bg={4} logo="white">
 
 # TypeScript
 
-</Title>
+</Section>
 
 ---
 
@@ -273,7 +245,7 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 
 <Slide>
 
-# What is TypeScript?  
+# What is TypeScript?
 <Split>
 
 * Language Specification
@@ -286,15 +258,15 @@ ES 9, auch ECMAScript 2018 genannt, im Jahr 2018]
 * _TS does not run in the browser!_
 * _It has to be compiled to JS first_
 
-![TypeScript ist eine Übermenge von JavaScript. 
+![TypeScript ist eine Übermenge von JavaScript.
   Die Grafik zeigt in einer kreisförmigen Anordnung schematisch die Beziehung zwischen TypeScript und JavaScript
   Die Grafik besteht aus drei Kreisen. Der innerste Kreis trägt die Bezeichnung ES5. Um diesen
   ist ein zweiter Kreis mit der Bezeichnung ES2018. Ein dritter Kreis mit der Bezeichnung TypeScript umschließt die beiden.]
-(./adesso/images/tssuperset.png)    
+(./adesso/images/tssuperset.png)
 
 </Split>
 
-</Slide>   
+</Slide>
 
 ---
 
@@ -312,10 +284,10 @@ The result: better maintenance for long-living projects
 
 
 
-* TypeScript    
+* TypeScript
     * JavaScript: "undefined is not a function"
     * Developer: Ok, time to fish out this bug 🐞
-* vs. JavaScript    
+* vs. JavaScript
     * TypeScript: "See this function, the first parameter expects a function, the second an array"
     * Developer: 🙏
 
@@ -409,7 +381,7 @@ enum Direction {
 
 ---
 
-<Section bg={4}>
+<Section bg={4} logo="white">
 
 # Functions
 
@@ -556,7 +528,7 @@ function forever(): never {
 
 ---
 
-<Section bg={4}>
+<Section bg={4} logo="white">
 
 # Interfaces & type alias
 
@@ -707,7 +679,7 @@ being open to extension, you should always use an interface over a type alias if
 
 ---
 
-<Section bg={4}>
+<Section bg={4} logo="white">
 
 # Classes
 
@@ -853,7 +825,7 @@ personLogger('John Doe') // Error
 
 ---
 
-<Section bg={4}>
+<Section bg={4} logo="white">
 
 # Advanced Types
 
