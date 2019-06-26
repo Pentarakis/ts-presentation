@@ -450,7 +450,7 @@ Function arguments can have defaults for arguments.
 ```ts
 function buildName(
     firstName: string,
-	lastName: string = 'Adams') {
+	lastName = 'Adams') {
     // type Inference: lastName is a string
     return firstName + ' ' + lastName;
 }
@@ -465,8 +465,8 @@ function buildName(
 # Overloads
 
 ```ts
-function greet(person: Person)
-function greet(name: string)
+// function greet(person: Person)
+// function greet(name: string)
 function greet(personOrName: Person | name) {
     // implementation has to check which
     // arguments are supplied
@@ -554,7 +554,7 @@ function forever(): never {
 You can declare types inline
 
 ```ts
-const book: { isbn: string, title: string };
+let book: { isbn: string, title: string };
 
 book = {
     isbn: '978-1593272821',
@@ -987,53 +987,6 @@ foo['second'] = 'hello' // Error;
 
 <Slide>
 
-# Mapped Types
-
-allow generic transformations for each property of an old type to a new type
-
-</Slide>
-
----
-
-<Slide>
-
-# build in mapped types
-
-```ts
-type Partial<T> = { [P in keyof T]?: T[P]; };
-type Pick<T, K extends keyof T> = { [P in K]: T[P]; };
-type Readonly<T> = { readonly [P in keyof T]: T[P]; };
-type Required<T> = { [P in keyof T]-?: T[P]; };
-```
-
-</Slide>
-
----
-
-<Slide>
-
-# Conditional Types
-
-```ts
-type Exclude<T, U> = T extends U ? never : T;
-type Extract<T, U> = T extends U ? T : never;
-type Parameters<T extends (...args: any) => any> =
-    T extends (...args: infer P) => any ? P : never;
-type ConstructorParameters<T extends new (...args: any) => any> =
-    T extends new (...args: infer P) => any ? P : never;
-type ReturnType<T extends (...args: any) => any> =
-    T extends (...args: any) => infer R ? R : any;
-type InstanceType<T extends new (...args: any) => any> =
-    T extends new (...args: any) => infer R ? R : any;
-
-```
-
-</Slide>
-
----
-
-<Slide>
-
 # Type compatibility
 
 * structurally typed
@@ -1330,9 +1283,46 @@ Examples are `@types/node` for Node.js, `@types/lodash`, …
 
 <Slide>
 
-# Best practices
+# Mapped Types
 
-* Always type parameter and return value
+allow generic transformations for each property of an old type to a new type
+
+</Slide>
+
+---
+
+<Slide>
+
+# build in mapped types
+
+```ts
+type Partial<T> = { [P in keyof T]?: T[P]; };
+type Pick<T, K extends keyof T> = { [P in K]: T[P]; };
+type Readonly<T> = { readonly [P in keyof T]: T[P]; };
+type Required<T> = { [P in keyof T]-?: T[P]; };
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+# Conditional Types
+
+```ts
+type Exclude<T, U> = T extends U ? never : T;
+type Extract<T, U> = T extends U ? T : never;
+type Parameters<T extends (...args: any) => any> =
+    T extends (...args: infer P) => any ? P : never;
+type ConstructorParameters<T extends new (...args: any) => any> =
+    T extends new (...args: infer P) => any ? P : never;
+type ReturnType<T extends (...args: any) => any> =
+    T extends (...args: any) => infer R ? R : any;
+type InstanceType<T extends new (...args: any) => any> =
+    T extends new (...args: any) => infer R ? R : any;
+
+```
 
 </Slide>
 
@@ -1343,11 +1333,10 @@ Examples are `@types/node` for Node.js, `@types/lodash`, …
 # Hands-on
 
 ```bash
-mkdir hands-on
-cd hands-on
 npm init -y
 npm i typescript
-npx tsc --init
+tsc --init
+tsc -w
 ```
 
 </Slide>
