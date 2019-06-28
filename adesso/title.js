@@ -1,19 +1,9 @@
+import { getBackground } from './bg-utils';
 import './title.css';
 
 export const Title = props => {
     const children = Array.isArray(props.children) ? props.children : [props.children];
-    let imageUrl = undefined;
-    if (typeof props.bg === 'number') {
-        imageUrl = `adesso/assets/BG${props.bg}.jpg`
-    } else if (typeof props.bg === 'string') {
-        imageUrl = props.bg;
-    }
-    const backgroundStyle = imageUrl ? {
-        background: `url(${imageUrl})`,
-        backgroundPosition: 'top',
-        backgroundRepeat: 'no-repeat',
-        backgroundSize: '100% 100%'
-    }: undefined;
+    const backgroundStyle = getBackground(props);
 
     return (
         <div className="title-wrapper">

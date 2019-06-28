@@ -1,14 +1,16 @@
 .slide-wrapper {
     width: 100vw;
     height: 100vh;
-    padding: 60px;
-    padding-top: 45px;
     font-size: 32px;
     padding: 65px 60px 47px 95px;
 }
 
 .slide-wrapper header {
     color: #0071B9;
+}
+
+.slide-wrapper header.white {
+    color: #FFFFFF;
 }
 
 .slide-wrapper header .first-line {
@@ -19,15 +21,23 @@
     padding-bottom: 0.7em;
     margin-right: 150px;
 }
+.slide-wrapper header.white .first-line{
+    border-bottom: 2px solid #FFFFFF;
+}
+
 .slide-wrapper header .first-line .company-name, .slide-wrapper header .first-line .current-date{
     border-left: 2px solid #0071B9;
     margin-left: 20px;
     padding-left: 15px;
 }
 
+.slide-wrapper header.white .first-line .company-name, .slide-wrapper header.white .first-line .current-date{
+    border-left: 2px solid #FFFFFF;
+}
+
 .slide-wrapper header h1 {
     font-size: 48px;
-    margin-top: 0; 
+    margin-top: 0;
     margin-bottom: 0;
     font-weight: normal;
 }
@@ -38,33 +48,19 @@
     margin-right: -15px;
 }
 
+.slide-wrapper main{
+    margin-top: 70px;
+}
+
 .slide-wrapper main p {
     color: rgba(0, 0, 0, 0.8);
     font-weight: bold;
 }
 
 .slide-wrapper main ul {
-    list-style: none;
-   /* padding: 0; */
+    list-style-image:url("/adesso/assets/bracket.png")
 }
 
-.slide-wrapper main ul li::before {
-    content: "•";
-    color: #0071B9;
-    padding-right: 0.5em; 
+.slide-wrapper main ul li {
+    padding-left: 0.5em;
 }
-
-.slide-wrapper blockquote{
-    font-size: 2rem;
-    font-style: italic;
-}
-
-.slide-wrapper img[alt~="TypeScript"]{
-    margin-left: 4em
-}
-
-@media print{
-.slide-wrapper pre{
-    font-size: 25px
-}
-} 
