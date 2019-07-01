@@ -1035,7 +1035,6 @@ foo['second'] = 'hello' // Error;
 
 <Slide>
 
-<<<<<<< HEAD
 # Mapped Types
 
 allow generic transformations for each property of an old type to a new type
@@ -1076,12 +1075,6 @@ type InstanceType<T extends new (...args: any) => any> =
     T extends new (...args: any) => infer R ? R : any;
 
 ```
-
-</Slide>
-
----
-
-<Slide>
 
 </Slide>
 
@@ -1163,8 +1156,6 @@ type C = InstanceType<RegExpConstructor>;        // RegExp
 
 <Slide>
 
-=======
->>>>>>> master
 # Type compatibility
 
 * structurally typed
