@@ -1009,7 +1009,7 @@ let john: Person = {
     name: 'John',
     age: 35
 };
-const age = pluck(john, 'age') // type: number
+const age = pluck(john, 'age') // 35
 ```
 </Slide>
 
@@ -1027,6 +1027,127 @@ interface Dictionary<T> {
 const foo: Dictionary<number> = {};
 foo['first'] = 1; // OK
 foo['second'] = 'hello' // Error;
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+# Mapped Types
+
+allow generic transformations for each property of an old type to a new type
+
+</Slide>
+
+---
+
+<Slide>
+
+# build in mapped types
+
+```ts
+type Partial<T> = { [P in keyof T]?: T[P]; };
+type Pick<T, K extends keyof T> = { [P in K]: T[P]; };
+type Readonly<T> = { readonly [P in keyof T]: T[P]; };
+type Required<T> = { [P in keyof T]-?: T[P]; };
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+# Conditional Types
+
+```ts
+type Exclude<T, U> = T extends U ? never : T;
+type Extract<T, U> = T extends U ? T : never;
+type Parameters<T extends (...args: any) => any> =
+    T extends (...args: infer P) => any ? P : never;
+type ConstructorParameters<T extends new (...args: any) => any> =
+    T extends new (...args: infer P) => any ? P : never;
+type ReturnType<T extends (...args: any) => any> =
+    T extends (...args: any) => infer R ? R : any;
+type InstanceType<T extends new (...args: any) => any> =
+    T extends new (...args: any) => infer R ? R : any;
+
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+Exclude
+
+```ts
+type A = Exclude<string | string[], any[]>;      // string
+type B = Exclude<(() => void) | null, Function>; // null
+type C = Exclude<200 | 400, 200 | 201>;          // 400
+type D = Exclude<number, boolean>;               // number
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+Extract
+
+```ts
+type A = Extract<string | string[], any[]>;      // string[]
+type B = Extract<(() => void) | null, Function>; // () => void
+type C = Extract<200 | 400, 200 | 201>;          // 200
+type D = Extract<number, boolean>;               // never
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+ReturnType
+
+```ts
+type A = ReturnType<() => string>;               // string
+type B = ReturnType<() => () => any[]>;          // () => any[]
+type C = ReturnType<typeof Math.random>;         // number
+type D = ReturnType<typeof Array.isArray>;       // boolean
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+Parameters
+
+```ts
+type A = Parameters<() => void>;                 // []
+type B = Parameters<typeof Array.isArray>;       // [any]
+type C = Parameters<typeof parseInt>;            // [string, (number | undefined)?]
+type D = Parameters<typeof Math.max>;            // number[]
+```
+
+</Slide>
+
+---
+
+<Slide>
+
+Parameters
+
+```ts
+type A = InstanceType<ErrorConstructor>;         // Error
+type B = InstanceType<FunctionConstructor>;      // Function
+type C = InstanceType<RegExpConstructor>;        // RegExp
 ```
 
 </Slide>
